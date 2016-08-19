@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+main div.animal {
+  width: calc(33.3% - 10px);
+  margin: 5px;
+}
+
+/* Flexbox デモ 2 : レスポンシブ対応 */
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main div.animal {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+}
