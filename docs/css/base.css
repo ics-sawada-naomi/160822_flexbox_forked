@@ -44,3 +44,7 @@ img {
 .animal img {
   width: 100%;
 }
+
+aside {
+  padding: 10px;
+}
