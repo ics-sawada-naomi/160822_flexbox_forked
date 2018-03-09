@@ -1,27 +1,26 @@
 // 変換したいCSSファイルのパス
-var cssFile = "docs/css/style.css";
+const cssFile = 'docs/css/style.css';
 // 変換後のCSSファイルを保存するパス
-var cssDistPath = "docs/css/";
+const cssDistPath = 'docs/css/';
 // 変換後のCSSファイルの名前
-var cssDistFile = "style_dist.css";
+const cssDistFile = 'style_dist.css';
 
 /*
  * ここからタスク処理
  */
 // gulpプラグインの読みこみ
-var gulp = require("gulp");
+const gulp = require('gulp');
 // gulp-renameの読み込み
-var rename = require("gulp-rename");
+const rename = require('gulp-rename');
 // Autoprefixerの読み込み
-var autoprefixer = require("gulp-autoprefixer");
+const autoprefixer = require('gulp-autoprefixer');
 
-gulp.task("default", function () {
-  return gulp.src(cssFile)
+gulp.task('default', () =>
+  gulp.src(cssFile)
     .pipe(autoprefixer({
       // IEは10以上、Androidは4以上、iOS Safariは8以上
-      browsers: ["ie >= 10", "Android >= 4", "ios_saf >= 8"],
-      cascade:false
+      browsers: ['ie >= 10', 'Android >= 4', 'ios_saf >= 8'],
+      cascade: false
     }))
     .pipe(rename(cssDistFile))
-    .pipe(gulp.dest(cssDistPath))
-});
+    .pipe(gulp.dest(cssDistPath)));
