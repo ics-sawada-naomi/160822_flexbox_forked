@@ -18,6 +18,7 @@ main {
 }
 
 main div.animal {
+  /* （全体の幅 - gapでつけた余白の合計）をカラム数で割る */
   width: calc((100% - 20px) / 3);
 }
 
@@ -29,6 +30,7 @@ main div.animal {
   }
 
   main div.animal {
+    /* （全体の幅 - gapでつけた余白の合計）をカラム数で割る */
     width: calc((100% - 10px) / 2);
   }
 }
