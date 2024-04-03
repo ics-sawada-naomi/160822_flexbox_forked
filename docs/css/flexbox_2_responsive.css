@@ -1,39 +1,36 @@
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
 }
 
 ul {
   display: flex;
   align-items: center;
-}
-
-ul li {
-  margin-left: 5px;
-  margin-right: 5px;
+  gap: 10px;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  gap: 10px;
 }
 
 main div.animal {
-  width: calc(33.3% - 10px);
-  margin: 5px;
+  /* （全体の幅 - gapでつけた余白の合計）をカラム数で割る */
+  width: calc((100% - 20px) / 3);
 }
 
 /* Flexbox デモ 2 : レスポンシブ対応 */
-@media (max-width: 500px) {
+@media (width <= 500px) {
   header {
     flex-direction: column;
     align-items: center;
   }
 
   main div.animal {
-    width: calc(50% - 10px);
-    margin: 5px;
+    /* （全体の幅 - gapでつけた余白の合計）をカラム数で割る */
+    width: calc((100% - 10px) / 2);
   }
 }
